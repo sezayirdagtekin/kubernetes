@@ -86,6 +86,7 @@ microk8s config > ~/.kube/config
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/7b02003d-06e2-4479-b359-69ff87ceaad9)
 
 After reboot
+
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/928ae9c0-3ab2-4719-8fa6-7c416179254a)
 
 
