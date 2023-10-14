@@ -65,3 +65,29 @@ To install kubectl, simply use the following command:
 ```
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/3d18efb9-9882-4660-bfd8-45d7cb3925d1)
 
+
+### Permissions
+To avoid the need to use sudo when running microk8s commands, add the current user to the microk8s group and ensure that the user has access to files in the ~/.kube folder.
+
+```
+sudo usermod -a -G microk8s $USER
+sudo chown -f -R $USER ~/.kube
+```
+
+
+### IGenerate Kube config
+Backup any existing Kube configuration file and then generate a new kube config.
+
+```
+mkdir -p ~/.kube
+microk8s config > ~/.kube/config
+```
+
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/7b02003d-06e2-4479-b359-69ff87ceaad9)
+
+After reboot
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/928ae9c0-3ab2-4719-8fa6-7c416179254a)
+
+
+
+
