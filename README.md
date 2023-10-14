@@ -33,5 +33,29 @@ sudo ufw allow in on cni0 && sudo ufw allow out on cni0
 sudo ufw default allow routed
 ```
 
+## Enable addons
+With microk8s status you can see the list of available addons and the ones currently enabled.
+
+```
+sudo microk8s status
+```
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/88c5a404-bbc8-47aa-8a92-04fae1e86831)
+
+By default we get a barebones upstream Kubernetes. Additional services, such as
+dashboard  can be enabled by running the command
+
+```
+sudo microk8s enable dashboard
+```
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/bfd0b90c-ff17-43c7-90d1-70938d0afaeb)
+
+
+dashboard  can be disable by running the command
+
+```
+ sudo microk8s disable dashboard
+```
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/1c1fd9fb-bc01-424c-9caf-38af5f1318fc)
+
 
 
