@@ -90,5 +90,35 @@ After reboot
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/928ae9c0-3ab2-4719-8fa6-7c416179254a)
 
 
+### IGenerate Kube config
+Backup any existing Kube configuration file and then generate a new kube config.
+
+
+###  Accessing the Kubernetes dashboard
+
+you can install the dashboard
+```
+microk8s enable dashboard
+```
+create token
+
+```
+microk8s kubectl create token default
+```
+
+get token 
+```
+microk8s kubectl -n kube-system describe secret $token
+```
+
+you can also reach the dashboard by forwarding its port to a free one on your host with:
+```
+microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 9444:443
+```
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/fde68ef9-6594-49ac-910d-76b44f0d3bf5)
+
+you can then access the Dashboard at https://127.0.0.1:10444.
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/5b764f4a-0e00-472f-88e8-d3f07da0b936)
+
 
 
