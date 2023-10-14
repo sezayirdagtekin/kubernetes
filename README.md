@@ -57,5 +57,11 @@ dashboard  can be disable by running the command
 ```
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/1c1fd9fb-bc01-424c-9caf-38af5f1318fc)
 
+### Install kubectl
 
+To install kubectl, simply use the following command:
+```
+ sudo snap install kubectl --classic
+```
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/3d18efb9-9882-4660-bfd8-45d7cb3925d1)
 
