@@ -149,7 +149,8 @@ microk8s kubectl expose deployment nginx-webserver --type="NodePort" --port 80
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/a2a2e589-d619-4a96-9e9f-9df7c3746350)
 
 
-``` microk8s kubectl get service
+```
+ microk8s kubectl get service
 ```
 
 As you can see, Kubernetes has mapped internal port 80 (the one being used by NGINX) to external port 32729 (the one being used by the Kubernetes cluster). So, if you point your web browser to localhost:32729, you should see the NGINX welcome screen in your browser.
@@ -157,4 +158,47 @@ As you can see, Kubernetes has mapped internal port 80 (the one being used by NG
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/1e3753cd-9745-47f6-9064-de764b59bcb6)
 
 
+## Basic microk8s commands
+
+#### microk8s start
+```
+ microk8s start
+```
+
+
+#### microk8s status
+```
+microk8s status
+```
+
+#### microk8s version
+```
+ microk8s version
+```
+
+
+#### mmicrok8s enable addon
+```
+microk8s enable addon
+```
+
+#### mmicrok8s disable addon
+```
+microk8s disable addon
+```
+
+#### microk8s inspect
+```
+ microk8s inspect
+```
+
+#### microk8s config
+```
+ microk8s config
+```
+
+#### microk8s stop
+```
+ microk8s stop
+```
 
