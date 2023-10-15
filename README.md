@@ -120,5 +120,41 @@ microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 9444:4
 you can then access the Dashboard at https://127.0.0.1:10444.
 ![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/5b764f4a-0e00-472f-88e8-d3f07da0b936)
 
+ ### Deploy NGINX web server Application with MicroK8s
+Log in to the MicroK8s controller. Lets deploy an NGINX web server application. We’ll name this deployment nginx-webserver and use the official NGINX container image for the deployment. The command for this is:
+
+```
+ microk8s kubectl create deployment nginx-webserver --image=nginx
+```
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/8595940a-3464-4ce7-8431-c020cefcddca)
+
+
+Verify the deployment was successful with the command:
+
+```
+microk8s kubectl get pods
+```
+
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/0e6aebd1-254c-463a-87db-bc047505a5c8)
+
+Pod has been deployed to the cluster. What is a pod? A Kubernetes pod is a collection of one or more containers and is the smallest unit of an application. Pods are IIIn In our instance above, we deployed a pod with a single container (NGINX).
+
+At this point, the NGINX application is running but isn’t accessible. In order to make it accessible, we  have to deploy a service. What we’ll do here is expose our nginx-webserver deployment, using the type “NodePort” on port 80. NodePort is an open port on every node connected to your cluster. Kubernetes routes incoming traffic on the NodePort to your deployed service or application.
+
+To deploy the service, the command will look like this
+
+```
+microk8s kubectl expose deployment nginx-webserver --type="NodePort" --port 80
+```
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/a2a2e589-d619-4a96-9e9f-9df7c3746350)
+
+
+``` microk8s kubectl get service
+```
+
+As you can see, Kubernetes has mapped internal port 80 (the one being used by NGINX) to external port 32729 (the one being used by the Kubernetes cluster). So, if you point your web browser to localhost:32729, you should see the NGINX welcome screen in your browser.
+
+![image](https://github.com/sezayirdagtekin/microk8s/assets/6317282/1e3753cd-9745-47f6-9064-de764b59bcb6)
+
 
 
