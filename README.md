@@ -160,44 +160,42 @@ As you can see, Kubernetes has mapped internal port 80 (the one being used by NG
 
 ## Basic microk8s commands
 
-#### microk8s start
+Start
 ```
  microk8s start
 ```
 
-
-#### microk8s status
+ Status
 ```
 microk8s status
 ```
 
-#### microk8s version
+Version
 ```
  microk8s version
 ```
 
-
-#### mmicrok8s enable addon
+ Enable addon
 ```
 microk8s enable addon
 ```
 
-#### mmicrok8s disable addon
+Disable addon
 ```
 microk8s disable addon
 ```
 
-#### microk8s inspect
+Inspect
 ```
  microk8s inspect
 ```
 
-#### microk8s config
+Config
 ```
  microk8s config
 ```
 
-#### microk8s stop
+Stop
 ```
  microk8s stop
 ```
